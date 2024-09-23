@@ -25,13 +25,10 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Debug issue
-      run: mvn dependency:tree -Dincludes=org.codehaus.groovy:groovy-eclipse-batch
-
-    - name: clean install
-      run: mvn clean install -U
+      run: mvn help:effective-pom
 
     - name: Build with Maven
-      run: mvn package
+      run: mvn package -X
 
     - name: Upload NAR files as artifacts
       uses: actions/upload-artifact@v3
