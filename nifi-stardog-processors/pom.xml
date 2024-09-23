@@ -58,12 +58,12 @@
 			<artifactId>nifi-mock</artifactId>
 			<version>${nifi.version}</version>
 			<scope>test</scope>
-			<exclusions>
+			<!-- <exclusions>
 				<exclusion>
 					<groupId>net.minidev</groupId>
 					<artifactId>json-smart</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
