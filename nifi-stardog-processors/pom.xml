@@ -20,6 +20,13 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.groovy</groupId>
+						<artifactId>groovy-eclipse-batch</artifactId>
+						<version>2.5.14-02</version>
+					</dependency>
+            	</dependencies>   
 			</plugin>
 		</plugins>
 	</build>
