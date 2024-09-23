@@ -20,9 +20,6 @@ jobs:
         java-version: 21
         java-distribution: 'zulu'
 
-    - name: Debug issue
-      run: mvn help:effective-pom
-
     - name: Build with Maven
       run: mvn package -X
 
