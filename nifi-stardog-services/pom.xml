@@ -33,6 +33,7 @@
 					<artifactId>json-smart</artifactId>
 				</exclusion>
 			</exclusions> -->
+		</dependency>
 	</dependencies>
 	
 </project>
