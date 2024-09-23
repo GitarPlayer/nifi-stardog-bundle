@@ -55,5 +55,9 @@
             <id>stardog-public</id>
             <url>https://maven.stardog.com</url>
         </repository>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
     </repositories>
 </project>
