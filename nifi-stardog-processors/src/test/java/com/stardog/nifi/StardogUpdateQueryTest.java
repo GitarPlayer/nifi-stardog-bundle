@@ -84,7 +84,7 @@ public class StardogUpdateQueryTest extends AbstractStardogQueryTest {
 	public void testSetServerViaVariable() {
 		TestRunner runner = newTestRunner();
 
-		runner.setVariable(DATABASE_VAR_NAME, getStardogDatabase());
+		runner.setEnvironmentVariableValue(DATABASE_VAR_NAME, getStardogDatabase());
 		runner.enqueue("");
 
 		runUpdateTest(runner);

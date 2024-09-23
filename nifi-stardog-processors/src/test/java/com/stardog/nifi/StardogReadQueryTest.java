@@ -254,7 +254,7 @@ public class StardogReadQueryTest extends AbstractStardogQueryTest {
 		runner.setProperty(SERVER, connectionStringWithDbExpression());
 
 		// Set the DB var via variable
-		runner.setVariable(DATABASE_VAR_NAME, getStardogDatabase());
+		runner.setEnvironmentVariableValue(DATABASE_VAR_NAME, getStardogDatabase());
 
 		runner.setProperty(REASONING_SCHEMA, "g1");
 		runner.assertValid();

@@ -67,7 +67,7 @@ public class StardogPutTest extends AbstractStardogProcessorTest {
 	public void testSetServerViaVariable() {
 		TestRunner runner = newTestRunner();
 
-		runner.setVariable(DATABASE_VAR_NAME, getStardogDatabase());
+		runner.setEnvironmentVariableValue(DATABASE_VAR_NAME, getStardogDatabase());
 		runner.enqueue("{ \"val\" : \"1\" }");
 
 		runServerExpressionTest(runner);
