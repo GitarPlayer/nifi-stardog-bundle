@@ -10,31 +10,50 @@
 
 	<artifactId>nifi-stardog-services</artifactId>
 	<packaging>jar</packaging>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.nifi</groupId>
+				<artifactId>nifi-api</artifactId>
+				<version>${nifi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.stardog</groupId>
+				<artifactId>nifi-stardog-connection-service-api</artifactId>
+				<version>${project.version}</version>
+				<scope>compile</scope>
+			</dependency>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.nifi</groupId>
-			<artifactId>nifi-api</artifactId>
-			<version>${nifi.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.stardog</groupId>
-			<artifactId>nifi-stardog-connection-service-api</artifactId>
-			<version>${project.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.nifi</groupId>
-			<artifactId>nifi-mock</artifactId>
-			<version>${nifi.version}</version>
-			<scope>test</scope>
-			<!-- <exclusions>
-				<exclusion>
-					<groupId>net.minidev</groupId>
-					<artifactId>json-smart</artifactId>
-				</exclusion>
-			</exclusions> -->
-		</dependency>
-	</dependencies>
+			<dependency>
+				<groupId>org.apache.nifi</groupId>
+				<artifactId>nifi-mock</artifactId>
+				<version>${nifi.version}</version>
+				<scope>test</scope>
+				<!-- <exclusions>
+					<exclusion>
+						<groupId>net.minidev</groupId>
+						<artifactId>json-smart</artifactId>
+					</exclusion>
+				</exclusions> -->
+			</dependency>
+			<!-- Override log4j-core to a secure version -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.24.0</version> <!-- Use the latest secure version -->
+            </dependency>
+            <!-- Override commons-logging to a secure version -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.3.4</version> <!-- Ensure this version is acceptable -->
+            </dependency>
+            <!-- Override org.json:json to a more recent version -->
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20240303</version> <!-- Latest version as of now -->
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
