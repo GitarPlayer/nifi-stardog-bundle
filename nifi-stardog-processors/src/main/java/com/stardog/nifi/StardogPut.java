@@ -34,7 +34,6 @@ import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.ByteStreams;
-import org.apache.nifi.annotation.behavior.EventDriven;
 import org.apache.nifi.annotation.behavior.InputRequirement;
 import org.apache.nifi.annotation.documentation.CapabilityDescription;
 import org.apache.nifi.annotation.documentation.Tags;
@@ -56,7 +55,6 @@ import org.apache.nifi.processor.util.StandardValidators;
 @Tags({"stardog", "put", "write", "rdf", "csv", "json"})
 @CapabilityDescription("Put data into a Stardog database. Data in RDF format is added directly whereas CSV and JSON input " +
                        "are imported into Stardog via the provided mapping file.")
-@EventDriven
 @InputRequirement(InputRequirement.Requirement.INPUT_REQUIRED)
 public class StardogPut extends AbstractStardogProcessor {
     // Impl note: We are cheating here by using QueryResultFormats constants for CSV and JSON input

@@ -12,7 +12,6 @@ import com.complexible.stardog.api.Query;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
-import org.apache.nifi.annotation.behavior.EventDriven;
 import org.apache.nifi.annotation.behavior.InputRequirement;
 import org.apache.nifi.annotation.documentation.CapabilityDescription;
 import org.apache.nifi.annotation.documentation.Tags;
@@ -33,7 +32,6 @@ import org.apache.nifi.processor.util.StandardValidators;
 @CapabilityDescription("Execute provided SPARQL update query. This processor can be scheduled to run on a timer, or cron expression, using the standard " +
                        "scheduling methods, or it can be triggered by an incoming FlowFile. If it is triggered by an incoming FlowFile, then " +
                        "attributes of that FlowFile will be available when evaluating the query but the contents of that file will not be used. ")
-@EventDriven
 @InputRequirement(InputRequirement.Requirement.INPUT_ALLOWED)
 public class StardogUpdateQuery extends AbstractStardogQueryProcessor {
 

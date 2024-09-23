@@ -34,7 +34,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.ByteStreams;
 import org.apache.commons.lang3.mutable.MutableLong;
-import org.apache.nifi.annotation.behavior.EventDriven;
 import org.apache.nifi.annotation.behavior.InputRequirement;
 import org.apache.nifi.annotation.behavior.WritesAttribute;
 import org.apache.nifi.annotation.behavior.WritesAttributes;
@@ -60,7 +59,6 @@ import org.apache.nifi.processor.util.StandardValidators;
                        "large result sets are supported. This processor can be scheduled to run on a timer, or cron expression, using the standard " +
                        "scheduling methods, or it can be triggered by an incoming FlowFile.  If it is triggered by an incoming FlowFile, then " +
                        "attributes of that FlowFile will be available when evaluating the query but the contents of that file will not be used.")
-@EventDriven
 @InputRequirement(InputRequirement.Requirement.INPUT_ALLOWED)
 @WritesAttributes({ @WritesAttribute(attribute = "result.count", description = "The number of rows returned by the select query") })
 public class StardogReadQuery extends AbstractStardogQueryProcessor {
