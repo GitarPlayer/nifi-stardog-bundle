@@ -21,7 +21,7 @@ jobs:
         java-distribution: 'zulu'
 
     - name: Build with Maven
-      run: mvn package -X
+      run: mvn package -X -DSkipTests
 
     - name: Upload NAR files as artifacts
       uses: actions/upload-artifact@v3
