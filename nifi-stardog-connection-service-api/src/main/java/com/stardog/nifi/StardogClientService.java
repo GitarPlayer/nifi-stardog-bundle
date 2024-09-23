@@ -25,7 +25,7 @@ public interface StardogClientService extends ControllerService {
 	PropertyDescriptor USERNAME =
 			new PropertyDescriptor.Builder().name("Username")
 			                                .description("Username to connect to Stardog")
-			                                .expressionLanguageSupported(ExpressionLanguageScope.VARIABLE_REGISTRY)
+			                                .expressionLanguageSupported(ExpressionLanguageScope.ENVIRONMENT)
 			                                .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
 			                                .required(false)
 			                                .build();
@@ -34,7 +34,7 @@ public interface StardogClientService extends ControllerService {
 			new PropertyDescriptor.Builder().name("Password")
 			                                .description("Password to connect to Stardog")
 			                                .sensitive(true)
-			                                .expressionLanguageSupported(ExpressionLanguageScope.VARIABLE_REGISTRY)
+			                                .expressionLanguageSupported(ExpressionLanguageScope.ENVIRONMENT)
 			                                .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
 			                                .required(false)
 			                                .build();
