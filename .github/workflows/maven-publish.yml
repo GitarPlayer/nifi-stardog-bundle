@@ -15,9 +15,10 @@ jobs:
 
     steps:
     - name: Setup Maven
-      uses: s4u/setup-maven-action@v2
+      uses: s4u/setup-maven-action@v1.14.0
       with:
         java-version: 21
+        java-distribution: 'zulu'
 
     - name: Debug issue
       run: mvn help:effective-pom
