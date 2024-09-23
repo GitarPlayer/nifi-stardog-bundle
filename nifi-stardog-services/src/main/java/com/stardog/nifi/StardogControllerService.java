@@ -34,7 +34,7 @@ public class StardogControllerService extends AbstractControllerService implemen
 
 	static final PropertyDescriptor SERVER = SERVER_DESCRIPTOR_BUILDER
 			.required(true)
-			.expressionLanguageSupported(VARIABLE_REGISTRY)
+			.expressionLanguageSupported(ENVIRONMENT)
 			.build();
 
 	private static final List<PropertyDescriptor> SERVICE_PROPERTIES = ImmutableList.of(SERVER, USERNAME, PASSWORD);
