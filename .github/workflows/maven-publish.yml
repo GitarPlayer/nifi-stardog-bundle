@@ -23,6 +23,9 @@ jobs:
     - name: Build with Maven
       run: mvn package -DSkipTests
 
+    - name: List contents of all target directories
+      run: find . -type d -name "target" -exec sh -c 'echo "Contents of {}:"; ls -l {}' \;
+      
     - name: Upload NAR files as artifacts
       uses: actions/upload-artifact@v3
       with:
