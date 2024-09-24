@@ -28,4 +28,6 @@ jobs:
       with:
         name: nar-files
         path: |
+          nifi-stardog-bundle/nifi-stardog-processors/target/*.nar
+          nifi-stardog-bundle/nifi-stardog-nar/target/*.nar
           **/*.nar
