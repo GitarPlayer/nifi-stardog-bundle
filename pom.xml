@@ -25,6 +25,7 @@
         <module>nifi-stardog-services</module>
         <module>nifi-stardog-services-nar</module>
         <module>nifi-stardog-processors</module>
+        <module>nifi-stardog-processors-nar</module>
         <module>nifi-stardog-nar</module>
     </modules>
 
