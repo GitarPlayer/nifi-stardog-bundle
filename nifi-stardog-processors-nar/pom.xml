@@ -25,7 +25,6 @@
             <groupId>org.apache.nifi</groupId>
             <artifactId>nifi-kerberos-credentials-service-api</artifactId>
             <version>${nifi.version}</version>
-            <type>nar</type>
         </dependency>
     </dependencies>
 </project>
