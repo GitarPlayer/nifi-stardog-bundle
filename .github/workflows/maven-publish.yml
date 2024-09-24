@@ -26,20 +26,26 @@ jobs:
     - name: List contents of all target directories
       run: find . -type d -name "target" -exec sh -c 'echo "Contents of {}:"; ls -l {}' \;
       
-    - name: Find all NAR files
-      id: find_nars
-      run: echo "nars=$(find . -name '*.nar' | tr '\n' ' ')" >> $GITHUB_ENV
+    - name: Upload nifi-stardog-connection-service-api-nar
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-connection-service-api-nar
+        path: ./nifi-stardog-connection-service-api-nar/target/nifi-stardog-connection-service-api-nar-2.0.0.nar
 
-    - name: Upload each NAR file as a separate artifact
-      run: |
-        for nar in ${{ env.nars }}; do
-          artifact_name=$(basename $nar)
-          echo "Uploading $artifact_name"
-          gh api \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            /repos/${{ github.repository }}/actions/artifacts \
-            -F "name=${artifact_name}" \
-            -F "file=@${nar}"
-        done
+    - name: Upload nifi-stardog-services-nar
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-services-nar
+        path: ./nifi-stardog-services-nar/target/nifi-stardog-services-nar-2.0.0.nar
+
+    - name: Upload nifi-stardog-nar
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-nar
+        path: ./nifi-stardog-nar/target/nifi-stardog-nar-2.0.0.nar
+
+    - name: Upload nifi-stardog-processors-nar
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-processors-nar
+        path: ./nifi-stardog-processors-nar/target/nifi-stardog-processors-nar-2.0.0.nar
