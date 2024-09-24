@@ -26,11 +26,23 @@ jobs:
     - name: List contents of all target directories
       run: find . -type d -name "target" -exec sh -c 'echo "Contents of {}:"; ls -l {}' \;
       
-    - name: Upload NAR files as artifacts
+    - name: Upload NAR and JAR files as artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: nar-files
-        path: |
-          nifi-stardog-bundle/nifi-stardog-processors/target/*.nar
-          nifi-stardog-bundle/nifi-stardog-nar/target/*.nar
-          **/*.nar
+        name: nifi-stardog-connection-service-api-nar
+        path: ./nifi-stardog-connection-service-api-nar/target/nifi-stardog-connection-service-api-nar-2.0.0.nar
+    - name: Upload NAR and JAR files as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-services-nar
+        path: ./nifi-stardog-services-nar/target/nifi-stardog-services-nar-2.0.0.nar
+    - name: Upload NAR and JAR files as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-nar
+        path: ./nifi-stardog-nar/target/nifi-stardog-nar-2.0.0.nar
+    - name: Upload Processors JAR file as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: nifi-stardog-processors-jar
+        path: ./nifi-stardog-processors/target/nifi-stardog-processors-2.0.0.jar
