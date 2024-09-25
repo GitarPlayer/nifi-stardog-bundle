@@ -39,6 +39,7 @@
 			<groupId>org.apache.nifi</groupId>
 			<artifactId>nifi-kerberos-credentials-service-api</artifactId>
 			<version>${nifi.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.stardog</groupId>
